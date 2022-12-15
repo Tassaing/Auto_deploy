@@ -1,0 +1,18 @@
+# Example content
+
+html {
+    font-size: 100%;
+}
+
+body {
+    background: #FFFFFF;
+    font-family: sans-serif;
+    font-weight: 400;
+    line-height: 1.75;
+    color: #000000;
+}
+
+h1 {
+    margin-top: 0;
+    font-size: 3.052rem;
+}
