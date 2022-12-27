@@ -2,7 +2,7 @@
 - hosts: [proxmox]
   become: true
 
-- tasks:
+  tasks:
   - name: deploiement debian ansible
     proxmox:
     vmid: 100
