@@ -2,9 +2,9 @@
 - hosts: [proxmox]
   become: true
 
-tasks:
-- name: deploiement debian ansible
-proxmox:
+- tasks:
+  - name: deploiement debian ansible
+    proxmox:
     vmid: 100
     node: uk-mc02
     api_user: root@pam
@@ -13,3 +13,4 @@ proxmox:
     password: 123456
     hostname: example.org
     ostemplate: 'local:debian-11-turnkey-ansible_17.1-1_amd64.tar.gz'
+...
