@@ -1,17 +1,22 @@
----
-- hosts: [proxmox]
-  become: true
-
-  tasks:
-  
-  - name: deploiement debian ansible
-    proxmox:
-    vmid: 100
-    node: uk-mc02
-    api_user: root@pam
-    api_password: 1q2w3e
-    api_host: node1
-    password: 123456
-    hostname: example.org
-    ostemplate: 'local:debian-11-turnkey-ansible_17.1-1_amd64.tar.gz'
-...
+- hosts: 192.168.1.201
+vars:
+ansible_python_interpreter: /usr/bin/python3
+gather_facts: no
+tasks:
+- name: Create a new container
+community.general.proxmox:
+node: pve1
+api_user: 'root@pam'
+api_token_id: 'xxx'
+api_token_secret: 'xxx'
+api_host: pve1
+password: '123456'
+hostname: 'test02'
+storage: data02
+ostemplate: 'nas02:vztmpl/debian-11-standard_11.0-1_amd64.tar.gz'
+cores: 2
+memory: 4096
+swap: 0
+onboot: yes
+netif: '{"net0":"name=eth0,ip=dhcp,bridge=vmbr2,tag=10"}'
+timeout: 500
