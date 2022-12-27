@@ -1,6 +1,6 @@
 ---
-hosts: [proxmox]
-become: true
+- hosts: [proxmox]
+  become: true
 
 tasks:
 - name: deploiement debian ansible
