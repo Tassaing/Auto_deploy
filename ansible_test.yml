@@ -1,12 +1,11 @@
 ---
-- name: show templating results
-  ansible.builtin.debug:
-    msg: "{{ lookup('ansible.builtin.template', './some_template.j2') }}"
-
-- name: show templating results with different variable start and end string
-  ansible.builtin.debug:
-    msg: "{{ lookup('ansible.builtin.template', './some_template.j2', variable_start_string='[%', variable_end_string='%]') }}"
-
-- name: show templating results with different comment start and end string
-  ansible.builtin.debug:
-    msg: "{{ lookup('ansible.builtin.template', './some_template.j2', comment_start_string='[#', comment_end_string='#]') }}"
+hosts: all 
+proxmox:
+    vmid: 100
+    node: uk-mc02
+    api_user: root@pam
+    api_password: 1q2w3e
+    api_host: node1
+    password: 123456
+    hostname: example.org
+    ostemplate: 'local:debian-11-turnkey-ansible_17.1-1_amd64.tar.gz'
