@@ -2,7 +2,7 @@
 ---
 - name: 'prep proxmox hosts for automation'
   hosts: 'proxmox'
-  user: root
+  remote_user: root
   gather_facts: false
   vars:
     packages:
